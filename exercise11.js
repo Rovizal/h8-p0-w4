@@ -22,22 +22,17 @@
 function shoppingTime(memberId, money) {
     var sisaUang = money;
     var obj = [];
-    for (i = 0; i < 5; i++){
-      if (sisaUang>= 1500000){
-        sisaUang -= 1500000;
-        obj.push('Sepatu Stacattu');
-      }else if (sisaUang>=500000){
-        sisaUang -= 500000;
-        obj.push('Baju Zoro');
-      }else if (sisaUang >= 250000){
-        sisaUang -= 250000;
-        obj.push('Baju H&N');
-      }else if (sisaUang >= 175000){
-        sisaUang -= 175000;
-        obj.push('Sweater Uniklooh');
-      }else if (sisaUang>=50000){
-        sisaUang -= 50000;
-        obj.push('Casing Handphone');
+    var arrBarang = [
+      ['Sepatu Stacattu', 1500000],
+      ['Baju Zoro', 500000],
+      ['Baju H&N', 250000],
+      ['Sweater Uniklooh', 175000],
+      ['Casing Handphone', 50000]];
+
+    for (i = 0; i < arrBarang.length; i++){
+      if (sisaUang>= arrBarang[i][1]){
+        sisaUang -= arrBarang[i][1];
+        obj.push(arrBarang [i][0]);
       }
     }
 
